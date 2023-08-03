@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #03a9f4;
+    transition: 0.5s;
+}
+
+body.active{
+    background: #c71f1f;
+}
+
+.login_container{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+
+.bgbox{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.bgbox .box{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bgbox .box h2{
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.bgbox .box button{
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+}
+
+.formbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    z-index: 100;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+    transition: 0.5s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.formbox .form{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    transition: 0.5s;
+}
+
+.formbox.active .signinform{
+    left: -100%;
+    transition-delay: 0s;
+}
+
+.formbox.active .signupform{
+    left: 0;
+    transition-delay: 0.20s;
+    
+}
+
+.formbox .signupform{
+    left: 100%;  
+    transition-delay: 0; 
+}
+.formbox .signinform{
+    transition-delay: 0.20s;   
+}
+
+.formbox.active{
+    left: 50%;
+}
+
+.formbox .form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formbox .form form h3{
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.formbox .form form input{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    background: rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+}
+
+.formbox .form form button{
+    background: #57b3dd;
+    border: none;
+    max-width: 100px;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.formbox  .signupform form button{
+    background: #ee5a5a;
+    border: none;
+    max-width: 100px;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.formbox .form form .forgot{
+    color: #333;
+    margin-top: 20px;
+    margin-left: 30%;
+}
+
+@media (max-width : 690px){
+    .login_container{
+        max-width: 400px;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login_container .bgbox{
+        top: 0;
+        height: 100%;
+
+    }
+
+    .formbox{
+       width: 100%; 
+       height: 500px;
+       top: 0;
+       box-shadow: none;
+    }
+
+    .bgbox .box{
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        bottom: 0;
+    }
+
+    .box.signin{
+        top: 0;
+    }
+
+    .formbox.active{
+        left: 0;
+        top: 150px;
+    }
+
+}
